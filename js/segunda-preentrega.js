@@ -33,89 +33,20 @@ let bienvenida = alert('bienvenido a Planeta running! Descubri los mejores calza
 
 
 
-let filtrado = prompt('elija lo opcion de filtrado para encontrar tu calzado ideal:  \n 1- menor a mayor precio.  \n 2- calzado de asfalto.  \n 3- Calzado para tierra.  \n 4-tecnologia')
+let filtrado = parseInt(prompt('Opciones de filtrado:  \n 1- menor a mayor precio.  \n 2- calzado de asfalto.  \n 3- Calzado para tierra.  \n 4-tecnologia'))
 
 
-switch (filtrado) {
-    case '1':
-        stock.sort((a, b) => {
-            if (a.precio < b.precio) {
-                return -1;
-            }
-            menorAmayor = stock.map(function (modelo) {
-                return (`
-            ${modelo.id}- ${modelo.nombre}
-            precio: $ ${modelo.precio}
-            `)
-            })
+function filtrar (){
 
-        });
-        comprarUno = prompt('calzados disponibles:\n' + menorAmayor + ' \n si queres agregar un producto al carrito escribi el numero del mismo, de lo contrario escribi no')
-
-        break;
-
-
-
-    case '2':
-        asfalto = stock.filter((para) => para.superficie.includes('asfalto'))
-        opcionAsfato = asfalto.map(function (modelo) {
-            return (` ${modelo.id}-  ${modelo.nombre} precio: $ ${modelo.precio}
-`)
-        })
-        comprarDos = prompt('calzados disponibles:\n ' + opcionAsfato + '\n si queres agregar un producto al carrito escribi el numero del mismo,de lo contrario escribi no')
-        break;
-
-
-    case '3':
-        tierra = stock.filter((para) => para.superficie.includes('tierra'))
-        opcionTierra = tierra.map(function (modelo) {
-            return (`        
-            ${modelo.id}${modelo.nombre}
-            precio: $ ${modelo.precio}`)
-        })
-        comprarTres = prompt('calzados disponibles:\n 1-' + opcionTierra[0] + '\n 2-' + opcionTierra[1] + '\n si queres agregar un producto al carrito escribi el numero del mismo,de lo contrario escribi no')
-
-        break;
-
-    case '4':
-        tecnologia = stock.map((con) => {
-            return (`      
-            ${con.id}- ${con.nombre}
-            precio: $ ${con.precio}
-            tecnologia: ${con.tecnologia}
-            `)
-        })
-        comprarCuatro = prompt('calzados disponibles:\n' + tecnologia + '\n si queres agregar un producto al carrito escribi el numero del mismo,de lo contrario escribi no')
-}
-
-if (comprarUno==='1') {
-    
-        carrito.push(wildhourse)
-        agregarCompra =prompt('desea agregar algo mas al carrito?\n 1- Si\n 2-No')
-        
-}
-    else if(comprarUno==='2'){
-        carrito.push(pegasusTrail)
-        agregarCompra =prompt('desea agregar algo mas al carrito?\n 1- Si\n 2-No')
-        }
-
-    else if(comprarUno==='3'){
-        carrito.push(vomero)
-        agregarCompra =prompt('desea agregar algo mas al carrito?\n 1- Si\n 2-No')
-        }
-
-    else if(comprarUno==='4'){
-        carrito.push(alphafly)
-        agregarCompra =prompt('desea agregar algo mas al carrito?\n 1- Si\n 2-No')
+    while(isNaN(filtrado)){
+        alert('por favor ingrese solo numeros')
+        filtrado = parseInt(prompt('Opciones de filtrado:  \n 1- menor a mayor precio.  \n 2- calzado de asfalto.  \n 3- Calzado para tierra.  \n 4-tecnologia'))
     }
-    else if(comprarUno==='no'){
-        agregarCompra= alert('muchas gracias por la visita')
+    while(filtrado=Number){
+        switch(filtrado){
+            
+        }
+    }
 }
 
-
-
-if (agregarCompra==='1'){
-    filtrado = prompt('elija lo opcion de filtrado para encontrar tu calzado ideal:  \n 1- menor a mayor precio.  \n 2- calzado de asfalto.  \n 3- Calzado para tierra.  \n 4-tecnologia')
-    switch(filtrado){}
-}
-
+filtrar();

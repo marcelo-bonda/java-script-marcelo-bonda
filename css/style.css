@@ -1,0 +1,77 @@
+.box {
+    width: 320px;
+    height: 450px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: outset;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px black;
+    color: black;
+}
+
+img {
+    object-fit: unset;
+    width: 230px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+#contenedorProductos {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+align-content: space-between;
+justify-content: space-around;
+}
+
+
+.navegador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btnFiltro{
+    margin: 10px;
+    height: 80px;
+    width: 200px;
+    font-size: 1.7rem;
+
+}
+.boton{
+    height: 60px;
+    width: 170px;
+    font-size: 1.7rem;
+}
+#carrito{
+    height: 400px;
+    width: 400px;
+    border:solid 2px black;
+}
+
+
+#contador{
+    height: 80px;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.cantidadEncontrada{
+    font-size: 2rem;
+    
+}
+
+.itemCarrito{
+    display: flex;
+}
