@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Planet Running</title>
 </head>
-<body>
-<header>
-    <h1>Planeta Running</h1>
-    <div class="navegador">
-        <div id="contador"></div>
-        <button class="btnFiltro" id="filtroTodos">Todos los calzados</button>
-        <button class="btnFiltro" id="filtroAsfalto">asfalto</button>
-        <button class="btnFiltro" id="filtroTierra">tierra</button>
-        <button class="btnFiltro" id="filtroMenorPrecio">menor precio</button>
-        <button class="btnFiltro" id="filtroMayorPrecio" >mayor precio</button>
-    </div>
 
-    
-</header>
+<body>
+    <header class="encabezado">
+        <h1 class="tituloPrincipal">Planeta Running</h1>
+        <div class="navegador">
+
+            <button class="btnFiltro" id="filtroTodos">Todos los calzados</button>
+            <button class="btnFiltro" id="filtroAsfalto">asfalto</button>
+            <button class="btnFiltro" id="filtroTierra">tierra</button>
+            <button class="btnFiltro" id="filtroMenorPrecio">menor precio</button>
+            <button class="btnFiltro" id="filtroMayorPrecio">mayor precio</button>
+        </div>
+        <div class="publicidad">
+            <h2>Compra online desde cualquier parte del pais</h2>
+        </div>
+
+    </header>
+    <div id="contador"></div>
     <div id="contenedorProductos"></div>
-<div id="carrito"></div>
+    <div id="carrito"></div>
 
 
     <script src="./tercera-preentrega.js"></script>
 </body>
+
 </html>

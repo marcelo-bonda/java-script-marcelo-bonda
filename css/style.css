@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+
 .box {
     width: 320px;
     height: 450px;
@@ -10,7 +17,9 @@
     text-align: center;
     font-size: x-large;
     border-radius: 15px;
-    box-shadow: 5px 5px 2px black;
+    box-shadow: 10px 5px 5px black;
+    border-top: 2px solid black;
+    border-left:  2px solid black;
     color: black;
 }
 
@@ -22,56 +31,118 @@ img {
 }
 
 #contenedorProductos {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-align-content: space-between;
-justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-around;
+    background-color: orange;
 }
 
 
-.navegador{
+.navegador {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
-.btnFiltro{
+.btnFiltro {
     margin: 10px;
-    height: 80px;
+    height: 60px;
     width: 200px;
     font-size: 1.7rem;
+    background: linear-gradient(30deg,transparent 10%, orange 10%,orange 90%,transparent 10%);
+    border: none;
+    color: back;
+    font-family: iceberg;
+    box-shadow: 10px 5px 5px black;
 
 }
-.boton{
+
+.boton {
     height: 60px;
     width: 170px;
     font-size: 1.7rem;
-}
-#carrito{
-    height: 400px;
-    width: 400px;
-    border:solid 2px black;
-}
-
-
-#contador{
-    height: 80px;
-    width: 200px;
-    border: solid 2px black;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.cantidadEncontrada{
-    font-size: 2rem;
+    background: linear-gradient(30deg,transparent 10%, black 10%,black 90%,transparent 10%);
+    border: none;
+    color: orange;
+    font-family: iceberg;
+    box-shadow: 10px 5px 5px black;
     
 }
 
-.itemCarrito{
+#carrito {
+    height: 400px;
+
+    width: 400px;
+    border: solid 2px black;
+    
+    
+
+}
+
+
+
+
+.vaciar {
+    text-align: left;
+    width: 100px;
+}
+
+#contador {
+    background-color: orange;
+}
+
+.cantidadEncontrada {
+    font-size: 2rem;
+    font-family: bungee Spice;
+    background-color: black;
+    height: 100px;
     display: flex;
+    align-items: center;
+}
+
+.itemCarrito {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+
+.tituloPrincipal {
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+
+    font-size: 8rem;
+}
+
+.encabezado {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
+    background-color: black;
+    font-family: Bungee Spice;
+}
+
+.publicidad {
+
+    height: 100px;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloTarjetas{
+    font-family: iceberg;
 }
