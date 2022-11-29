@@ -19,8 +19,8 @@
         <div class="navegador">
 
             <button class="btnFiltro" id="filtroTodos">Todos los calzados</button>
-            <button class="btnFiltro" id="filtroAsfalto">asfalto</button>
-            <button class="btnFiltro" id="filtroTierra">tierra</button>
+            <button class="btnFiltro" id="filtroAsfalto" value="asfalto">asfalto</button>
+            <button class="btnFiltro" id="filtroTierra" value="tierra">tierra</button>
             <button class="btnFiltro" id="filtroMenorPrecio">menor precio</button>
             <button class="btnFiltro" id="filtroMayorPrecio">mayor precio</button>
         </div>
@@ -29,11 +29,22 @@
         </div>
 
     </header>
+<main>
     <div id="contador"></div>
     <div id="contenedorProductos"></div>
-    <div id="carrito"></div>
+    <button id="botonCarrito">Mostrar carrito</button>
+    <div class="alineacion">
 
+        <div id="carrito">
+            <div class="total">
+                <p> Total : ${total}</p>
+                <button id="vaciar" class="boton">vaciar</button>
+            </div>
+        </div>
+    </div>
 
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./tercera-preentrega.js"></script>
 </body>
 

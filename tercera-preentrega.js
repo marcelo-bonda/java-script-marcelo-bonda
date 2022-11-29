@@ -43,19 +43,9 @@ let contenedorProductos = document.getElementById("contenedorProductos")
 
 /*---------------botones de filtros------------------*/
 
-botonAsfalto.onclick = () => {
-    let productosFiltrados = productos.filter(producto => producto.superficie.includes('asfalto'))
-    renderizarProductos(productosFiltrados)
 
-
-}
-
-botonTierra.onclick = () => {
-    let productosFiltrados = productos.filter(producto => producto.superficie.includes('tierra'))
-    renderizarProductos(productosFiltrados)
-}
 botonTodos.onclick = () => {
-    renderizarProductos(productos)
+    renderizarProductos()
 }
 
 botonMenorPrecio.onclick = () => {
@@ -72,66 +62,98 @@ botonMayorPrecio.onclick = () => {
 }
 
 
+const crearTarjeta = (boton) => {
+    boton.onclick = () => {
+        contenedorProductos.innerHTML = ''
+        let productosFiltrados = productos.filter(producto => producto.superficie.includes(boton.value))
+        productosFiltrados.forEach((prod) => {
+            contador.innerHTML = `<p class='cantidadEncontrada'>productos encontrados: ${productosFiltrados.length}</p>`
+            let tarjetaProductos = document.createElement('div')
+            tarjetaProductos.className = 'box col-md-4'
+            tarjetaProductos.innerHTML = `<h2 class="tituloTarjetas"> ${prod.nombre}</h2>
+                                    <img src=${prod.img}>
+                                    <p>$ ${prod.precio}</p>
+                                    <button class ="boton" id="${prod.id}">agregar al carrito</button>`
+            contenedorProductos.append(tarjetaProductos)
+            const boton = document.getElementById(`${prod.id}`);
+            boton.addEventListener('click', () => {
+                agregarAlCarrito(prod.id);
+            });
+        })
+    }
+
+}
 
 
+crearTarjeta(botonAsfalto);
+crearTarjeta(botonTierra);
 
-
-/*mostrar productos disponibles en pantalla*/
 
 
 renderizarProductos()
 
 function renderizarProductos(productosFiltrados) {
-    let productosARenderizar = productos
-    if (productosFiltrados) {
-        productosARenderizar = productosFiltrados
-    }
     contenedorProductos.innerHTML = ''
-    for (producto of productosARenderizar) {
-        contador.innerHTML = `<p class='cantidadEncontrada'>productos encontrados: ${productosARenderizar.length}</p>`
+    productos.forEach((prod) => {
+        contador.innerHTML = `<p class='cantidadEncontrada'>productos encontrados: ${productos.length}</p>`
         let tarjetaProductos = document.createElement('div')
         tarjetaProductos.className = 'box col-md-4'
-        tarjetaProductos.innerHTML = `<h2 class="tituloTarjetas"> ${producto.nombre}</h2>
-                                <img src=${producto.img}>
-                                <p>$ ${producto.precio}</p>
-                                <button class ="boton" id="${producto.id}">agregar al carrito</button>`
-
-
+        tarjetaProductos.innerHTML = `<h2 class="tituloTarjetas"> ${prod.nombre}</h2>
+                                <img src=${prod.img}>
+                                <p>$ ${prod.precio}</p>
+                                <button class ="boton" id="${prod.id}">agregar al carrito</button>`
         contenedorProductos.append(tarjetaProductos)
-
-    }
+        const boton = document.getElementById(`${prod.id}`);
+        boton.onclick = () => {
+            agregarAlCarrito(prod.id);
+        };
+    })
 }
 
 
-/*-----------boton agregar productos------------*/
+const agregarAlCarrito = (id) => {
+    let productoBuscado = productos.find(producto => producto.id == id)
 
-let botones = document.getElementsByClassName('boton')
-
-let carrito = document.getElementById("carrito")
-
-for (const boton of botones) {
-    boton.onclick = (e) => {
-        let productoBuscado = productos.find(producto => producto.id == e.target.id)
-
-        let posicionCarrito = carritoGuardado.findIndex((producto) => producto.id == productoBuscado.id)
-
-
-        if (posicionCarrito != -1) {
-            carritoGuardado[posicionCarrito].unidades++
-            carritoGuardado[posicionCarrito].subtotal = carritoGuardado[posicionCarrito].precioUnidad * carritoGuardado[posicionCarrito].unidades
-        }
-        else {
-            carritoGuardado.push({ id: productoBuscado.id, nombre: productoBuscado.nombre, precioUnidad: productoBuscado.precio, unidades: 1, subtotal: productoBuscado.precio, total: productoBuscado.precio })
-        }
-
-
-        const carritoJson = localStorage.setItem('carrito', JSON.stringify(carritoGuardado))
-        localStorage.getItem('carrito')
-
-        renderizarCarrito()
+    let posicionCarrito = carritoGuardado.findIndex((producto) => producto.id == productoBuscado.id)
+    if (posicionCarrito != -1) {
+        carritoGuardado[posicionCarrito].unidades++
+        carritoGuardado[posicionCarrito].subtotal = carritoGuardado[posicionCarrito].precioUnidad * carritoGuardado[posicionCarrito].unidades
+    } else {
+        carritoGuardado.push({
+            id: productoBuscado.id,
+            nombre: productoBuscado.nombre,
+            precioUnidad: productoBuscado.precio,
+            unidades: 1,
+            subtotal: productoBuscado.precio,
+            total: productoBuscado.precio
+        })
     }
 
+    
+/* tostadita de producto agregado */
+
+    const carritoJson = localStorage.setItem('carrito', JSON.stringify(carritoGuardado))
+    localStorage.getItem('carrito')
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: 'success',
+        title: 'producto agregado al carrito'
+    })
+    renderizarCarrito()
 }
+
+
 
 
 /*--------------local storage------------------*/
@@ -156,26 +178,56 @@ function renderizarCarrito() {
         total += item.subtotal
         carrito.innerHTML += `<div class="itemCarrito">
         <p> ${item.nombre}</p>
-        <p>${item.precio}</p>
+        <p>${item.precioUnidad}</p>
         <p>x ${item.unidades} unidades</p>
         <p>${item.subtotal}</p>
         
         </div>
         `
-        
+
 
     }
     carrito.innerHTML += `<div class="total">
     <p> Total : ${total}</p>
-    <button id="vaciar">vaciar</button>
+    <button id="vaciar" class="boton">vaciar</button>
     </div>`
 
     let vaciar = document.getElementById('vaciar')
-vaciar.onclick=()=>{
-    localStorage.clear()
-    carrito.innerHTML=""
-    
+    vaciarCarrito();
+
 
 }
+
+
+
+
+
+
+function vaciarCarrito() {
+    vaciar.onclick = () => {
+        localStorage.clear()
+        carrito.innerHTML = `<div class="itemCarrito">
+        <p> nombre</p>
+        <p>Precio por unidad</p>
+        <p> unidades</p>
+        <p>subtotal</p>
+        </div>
+        `
+        Swal.fire('carrito vaciado')
+    }
 }
 
+let botonCarrito = document.getElementById("botonCarrito")
+botonCarrito.onclick = () => {
+    carrito.classList.toggle("noVisible")
+}
+
+const eventoFuturo =()=>{
+    return new Promise((resolve,reject)=>{
+setTimeout(()=>{
+    console.log('hola')
+},5000)
+    })
+}
+
+console.log(eventoFuturo())

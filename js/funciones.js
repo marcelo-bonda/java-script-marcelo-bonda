@@ -104,9 +104,25 @@ const winflo = new zapatilla(5, 'Nike zoom Winflo', 'asfalto', 22999, 'camara de
 const terra = new zapatilla(6, 'Nike Terra Kiger', 'tierra', 34999, 'camara de aire', '../images/terra-kiger.jpg')
 
 
-const productos =[]
+const productos = []
 productos.push(wildhourse, pegasusTrail, vomero, alphafly, winflo, terra)
 
 
 
-console.log(productos)
+const suma = productos.map(item => item.precio).reduce((acumulador, elemento) => acumulador + elemento, 0)
+
+console.log(suma)
+
+
+const botonMostrar = document.getElementsByClassName('mostrarCubo')
+const cubo = document.getElementById('cubo')
+
+function mostrarCubo() {
+
+    botonMostrar.onclick = () => {
+        cubo.classList.toggle("noVisible")
+        console.log("funciona")
+    }
+}
+
+mostrarCubo();

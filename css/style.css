@@ -77,17 +77,25 @@ img {
 }
 
 #carrito {
-    height: 400px;
-
-    width: 400px;
-    border: solid 2px black;
+    height: 500px;
+    width: 1000px;
+    display: flex;justify-content: space-evenly;
+    flex-direction: column;
+    background-color: yellow;
+    border: solid 10px black;
+    border-radius: 15px;
+    font-size: 2rem;
+    text-align: center;
     
-    
-
 }
 
 
-
+.alineacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: orange;
+}
 
 .vaciar {
     text-align: left;
@@ -145,4 +153,15 @@ img {
 
 .tituloTarjetas{
     font-family: iceberg;
+}
+
+#cubo{
+    width: 500px;
+    height: 500px;
+    border: solid 4px black;
+    
+}
+
+.noVisible{
+    display: none;
 }
