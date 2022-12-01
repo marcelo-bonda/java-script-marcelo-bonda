@@ -151,7 +151,7 @@ img {
     justify-content: center;
 }
 
-.tituloSecundario{
+.tituloSecundario {
     font-size: 1rem;
 }
 
@@ -168,34 +168,40 @@ img {
 
 
 .carousel p {
-    color: black;
-    
+
+
     font-size: 1rem;
 }
+
 @media (min-width:540px) {
     .btnFiltro {
         height: 50px;
         width: 170px;
         font-size: 1.3rem
     }
-    .tituloPrincipal{
+
+    .tituloPrincipal {
         font-size: 4rem;
         margin-top: 70px;
     }
-    .publicidad{
+
+    .publicidad {
         margin-bottom: 10px;
     }
-    .tituloSecundario{
+
+    .tituloSecundario {
         font-size: 1.2rem;
     }
 
-    .encabezado{
+    .encabezado {
         height: 700px;
     }
-    .carousel-item img{
+
+    .carousel-item img {
         height: 380px;
     }
-    .carousel p{
+
+    .carousel p {
         font-size: 2rem;
     }
 }
@@ -206,14 +212,17 @@ img {
         width: 170px;
         font-size: 1.5rem
     }
-    .tituloPrincipal{
+
+    .tituloPrincipal {
         font-size: 7rem;
     }
-    .publicidad{
+
+    .publicidad {
         font-size: 1.5rem;
         margin-bottom: 10px;
     }
-    .tituloSecundario{
+
+    .tituloSecundario {
         font-size: 1.8rem;
     }
 }
