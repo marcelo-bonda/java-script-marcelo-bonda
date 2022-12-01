@@ -132,7 +132,7 @@ img {
 }
 
 .encabezado {
-    display: flex;
+    display: flex ;
     height: 500px;
     flex-direction: column;
     align-content: center;
@@ -140,6 +140,7 @@ img {
     align-items: stretch;
     background-color: black;
     font-family: Bungee Spice;
+    
 }
 
 .publicidad {

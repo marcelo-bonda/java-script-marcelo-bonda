@@ -1,0 +1,19 @@
+{
+  "name": "js-marcelo-bonda",
+  "version": "1.0.0",
+  "description": "proyecto javascript",
+  "main": "miArchivo.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelo-bonda/java-script-marcelo-bonda.git"
+  },
+  "author": "marcelo bonda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelo-bonda/java-script-marcelo-bonda/issues"
+  },
+  "homepage": "https://github.com/marcelo-bonda/java-script-marcelo-bonda#readme"
+}
