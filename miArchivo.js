@@ -1,32 +1,12 @@
-class zapatilla {
-    constructor(id, nombre, superficie, precio, tecnologia, img) {
-        this.id = id
-        this.nombre = nombre
-        this.superficie = superficie
-        this.precio = precio
-        this.tecnologia = tecnologia
-        this.img = img
-    }
-    restarEfectivo() {
-        this.precio = this.precio - (this.precio * 0.15)
-    }
-    restaDebito() {
-        this.precio = this.precio - (this.precio * 0.10)
-    }
-    sumaCredito() {
-        this.precio = this.precio + (this.precio * 0.35)
-    }
-}
 
-const wildhourse = new zapatilla(1, 'Nike Wildhourse', 'tierra', 24999, 'camara de aire', '../images/wildhorse.jpg')
-const pegasusTrail = new zapatilla(2, 'Nike Pegasus Trail', 'tierra', 27999, 'react y camara de aire', '../images/pegasus-trail.jpg')
-const vomero = new zapatilla(3, 'Nike Vomero', 'asfalto', 28999, 'camara de aire', '../images/vomero.jpg')
-const alphafly = new zapatilla(4, 'Nike Alphafly', 'asfalto', 79999, 'placa de carbono', '../images/vaporfly.jpg')
-const winflo = new zapatilla(5, 'Nike zoom Winflo', 'asfalto', 22999, 'camara de aire', '../images/winflo.jpg')
-const terra = new zapatilla(6, 'Nike Terra Kiger', 'tierra', 34999, 'camara de aire', '../images/terra-kiger.jpg')
-const productos = []
+
 let carritoGuardado = []
-productos.push(wildhourse, pegasusTrail, vomero, alphafly, winflo, terra)
+
+const tienda = async () => {
+    const response = await fetch('./arrObjetos.json')
+    const productos = await response.json()
+
+
 
 
 /* toma de botones y contenedores ---*/
@@ -69,7 +49,7 @@ const crearTarjeta = (boton) => {
         productosFiltrados.forEach((prod) => {
             contador.innerHTML = `<p class='cantidadEncontrada'>productos encontrados: ${productosFiltrados.length}</p>`
             let tarjetaProductos = document.createElement('div')
-            tarjetaProductos.className = 'box col-md-4'
+            tarjetaProductos.className = 'box'
             tarjetaProductos.innerHTML = `<h2 class="tituloTarjetas"> ${prod.nombre}</h2>
                                     <img src=${prod.img}>
                                     <p>$ ${prod.precio}</p>
@@ -204,30 +184,16 @@ function renderizarCarrito() {
 
 
 function vaciarCarrito() {
-    vaciar.onclick = () => {
-        localStorage.clear()
-        carrito.innerHTML = `<div class="itemCarrito">
-        <p> nombre</p>
-        <p>Precio por unidad</p>
-        <p> unidades</p>
-        <p>subtotal</p>
-        </div>
-        `
-        Swal.fire('carrito vaciado')
+    vaciar.onclick = (e) => {
+        Swal.fire('carrito vaciado');
+        setTimeout (()=>{
+            location.reload()
+            localStorage.clear()
+        },1000) 
+        
+        
     }
 }
 
-let botonCarrito = document.getElementById("botonCarrito")
-botonCarrito.onclick = () => {
-    carrito.classList.toggle("noVisible")
 }
-
-const eventoFuturo =()=>{
-    return new Promise((resolve,reject)=>{
-setTimeout(()=>{
-    console.log('hola')
-},5000)
-    })
-}
-
-console.log(eventoFuturo())
+tienda()
