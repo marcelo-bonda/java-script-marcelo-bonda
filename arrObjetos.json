@@ -1,5 +1,5 @@
 [
-    {"id":1,"nombre":"Nike Wildhourse","superficie":"tierra","precio":24999,"img":"../Images/wildhorse.jpg"},
+    {"id":1,"nombre":"Nike Wildhourse","superficie":"tierra","precio":24999,"img":"Images/wildhorse.jpg"},
     {"id":2,"nombre":"Nike Pegasus Trail","superficie":"tierra","precio":27999,"img":"../Images/pegasus-trail.jpg"},
     {"id":3,"nombre":"Nike Vomero","superficie":"asfalto","precio":28999,"img":"../Images/vomero.jpg"},
     {"id":4,"nombre":"Nike Vaporfly Next","superficie":"asfalto","precio":79999,"img":"../Images/vaporfly.jpg"},
