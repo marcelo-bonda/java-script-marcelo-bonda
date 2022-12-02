@@ -77,7 +77,7 @@ function renderizarProductos(productosFiltrados) {
     productos.forEach((prod) => {
         contador.innerHTML = `<p class='cantidadEncontrada'>productos encontrados: ${productos.length}</p>`
         let tarjetaProductos = document.createElement('div')
-        tarjetaProductos.className = 'box col-md-4'
+        tarjetaProductos.className = 'box'
         tarjetaProductos.innerHTML = `<h2 class="tituloTarjetas"> ${prod.nombre}</h2>
                                 <img src=${prod.img}>
                                 <p>$ ${prod.precio}</p>
