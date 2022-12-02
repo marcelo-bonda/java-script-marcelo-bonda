@@ -1,13 +1,13 @@
 [
-    {"id":1,"nombre":"Nike Wildhourse","superficie":"tierra","precio":24999,"img":"Images/wildhorse.jpg"},
-    {"id":2,"nombre":"Nike Pegasus Trail","superficie":"tierra","precio":27999,"img":"../Images/pegasus-trail.jpg"},
-    {"id":3,"nombre":"Nike Vomero","superficie":"asfalto","precio":28999,"img":"../Images/vomero.jpg"},
-    {"id":4,"nombre":"Nike Vaporfly Next","superficie":"asfalto","precio":79999,"img":"../Images/vaporfly.jpg"},
-    {"id":5,"nombre":"Nike zoom Winflo","superficie":"asfalto","precio":22999,"img":"../Images/winflo.jpg"},
-    {"id":6,"nombre":"Nike Terra Kiger","superficie":"tierra","precio":34999,"img":"../Images/terra-kiger.jpg"},
-    {"id":7,"nombre":"Air Zoom Tempo","superficie":"asfalto","precio":44999,"img":"../Images/airzoomTempo.jpg"},
-    {"id":8,"nombre":"Alphafly","superficie":"asfalto","precio":83999,"img":"../Images/alphafly.jpg"},
-    {"id":9,"nombre":"React Infinity run","superficie":"asfalto","precio":37999,"img":"../Images/react.jpg"},
-    {"id":10,"nombre":"Zoom Fly","superficie":"asfalto","precio":32999,"img":"../Images/zoomfly.jpg"},
-    {"id":11,"nombre":"Zoomx Zegama","superficie":"tierra","precio":52399,"img":"../Images/zegama.jpg"}
+    {"id":1,"nombre":"Nike Wildhourse","superficie":"tierra","precio":24999,"img":"https://i.ibb.co/z5FJ8vM/wildhorse.jpg"},
+    {"id":2,"nombre":"Nike Pegasus Trail","superficie":"tierra","precio":27999,"img":"https://i.ibb.co/vdDhzwz/pegasus-trail.jpg"},
+    {"id":3,"nombre":"Nike Vomero","superficie":"asfalto","precio":28999,"img":"https://i.ibb.co/m8HVPSB/vomero.jpg"},
+    {"id":4,"nombre":"Nike Vaporfly Next","superficie":"asfalto","precio":79999,"img":"https://i.ibb.co/mB5twQ4/vaporfly.jpg"},
+    {"id":5,"nombre":"Nike zoom Winflo","superficie":"asfalto","precio":22999,"img":"https://i.ibb.co/BzBqDs0/winflo.jpg"},
+    {"id":6,"nombre":"Nike Terra Kiger","superficie":"tierra","precio":34999,"img":"https://i.ibb.co/1sSKdS0/terra-kiger.jpg"},
+    {"id":7,"nombre":"Air Zoom Tempo","superficie":"asfalto","precio":44999,"img":"https://i.ibb.co/hHH6JnW/airzoom-Tempo.jpg"},
+    {"id":8,"nombre":"Alphafly","superficie":"asfalto","precio":83999,"img":"https://i.ibb.co/yfnLP8z/alphafly.jpg" },
+    {"id":9,"nombre":"React Infinity run","superficie":"asfalto","precio":37999,"img":"https://i.ibb.co/2SX10mS/react.jpg"},
+    {"id":10,"nombre":"Zoom Fly","superficie":"asfalto","precio":32999,"img":"https://i.ibb.co/q5mjcTZ/zoomfly.jpg" },
+    {"id":11,"nombre":"Zoomx Zegama","superficie":"tierra","precio":52399,"img":"https://i.ibb.co/Jxfnq9G/zegama.jpg"}
 ]
